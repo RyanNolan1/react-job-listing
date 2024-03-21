@@ -12,9 +12,9 @@ function App() {
 function JobList() {
   return (
     <div>
-      <ul>
+      <ul className="jobs-list">
         {data.map((job) => (
-          <l1 key={job.id}>{job.company}</l1>
+          <l1 className="job-container" key={job.id}>{job.company}</l1>
         ))}
       </ul>
     </div>
