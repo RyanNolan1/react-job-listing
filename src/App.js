@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import data from "./data.json";
 
@@ -14,7 +15,14 @@ function JobList() {
     <div>
       <ul className="jobs-list">
         {data.map((job) => (
-          <l1 className="job-container" key={job.id}>{job.company}</l1>
+          <li className="job-container" key={job.id}>
+            <img src={job.logo} alt={job.company} />
+            <div className="job-name-container">{job.company}</div>
+            <h2>{job.position}</h2>
+            <p className="job-info-container">
+              {job.postedAt} &bull; {job.contract} &bull; {job.location}
+            </p>
+          </li>
         ))}
       </ul>
     </div>
