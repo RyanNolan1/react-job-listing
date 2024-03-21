@@ -22,6 +22,12 @@ function JobList() {
             <p className="job-info-container">
               {job.postedAt} &bull; {job.contract} &bull; {job.location}
             </p>
+            <hr></hr>
+            <div className="button-container">
+              {job.languages.map((language, index) => {
+               return <button key={index} className="language-buttons">{language}</button>
+              })}
+            </div>
           </li>
         ))}
       </ul>
