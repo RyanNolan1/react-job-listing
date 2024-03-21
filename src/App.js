@@ -35,7 +35,7 @@ function JobList() {
               {job.languages.map((language, index) => {
                 return (
                   <button
-                    onClick={(e) => {
+                    onClick={() => {
                       setLanguages([
                         ...languages,
                         { id: nextId++, language: language },
