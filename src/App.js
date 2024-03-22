@@ -4,21 +4,24 @@ import data from "./data.json";
 import { useState } from "react";
 
 function App() {
+  let nextId = 0;
+  const [languages, setLanguages] = useState([]);
+
+  function handleLanguages(language) {
+    setLanguages([...languages, { id: nextId++, language: language }]);
+  }
+
   return (
     <div>
-      <LanguageList />,
-      <JobList />
+      <LanguageList onHandleLanguages={handleLanguages} />
+      <JobList onHandleLanguages={handleLanguages} />
     </div>
   );
 }
 
 function LanguageList() {}
 
-function JobList() {
-  let nextId = 0;
-
-  const [languages, setLanguages] = useState([]);
-
+function JobList({ onHandleLanguages }) {
   return (
     <div>
       <ul className="jobs-list">
@@ -36,10 +39,7 @@ function JobList() {
                 return (
                   <button
                     onClick={() => {
-                      setLanguages([
-                        ...languages,
-                        { id: nextId++, language: language },
-                      ]);
+                      onHandleLanguages(language);
                     }}
                     key={index}
                     className="language-buttons"
