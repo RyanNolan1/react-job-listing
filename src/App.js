@@ -7,6 +7,14 @@ let nextId = 0;
 
 function App() {
   const [jobDetails, setjobDetails] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState(data);
+
+  function handleFilter(value, filterKey) {
+    const filtered = filteredJobs.filter((job) =>
+      job[filterKey].includes(value)
+    );
+    setFilteredJobs(filtered);
+  }
 
   function handlejobDetails(jobDetail) {
     if (
@@ -21,7 +29,7 @@ function App() {
   return (
     <div>
       <JobDetailsList jobDetails={jobDetails} />
-      <JobList onHandlejobDetails={handlejobDetails} />
+      <JobList filteredJobs={filteredJobs} onhandleFilter={handleFilter} onHandlejobDetails={handlejobDetails} />
     </div>
   );
 }
@@ -36,15 +44,7 @@ function JobDetailsList({ jobDetails }) {
   );
 }
 
-function JobList({ onHandlejobDetails }) {
-  const [filteredJobs, setFilteredJobs] = useState(data);
-
-  function handleFilter(value, filterKey) {
-    const filtered = filteredJobs.filter((job) =>
-      job[filterKey].includes(value)
-    );
-    setFilteredJobs(filtered);
-  }
+function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
 
   return (
     <div>
@@ -62,7 +62,7 @@ function JobList({ onHandlejobDetails }) {
               <button
                 onClick={() => {
                   onHandlejobDetails(job.role);
-                  handleFilter(job.role, "role");
+                  onhandleFilter(job.role, "role");
                 }}
                 className="info-button"
               >
@@ -71,7 +71,7 @@ function JobList({ onHandlejobDetails }) {
               <button
                 onClick={() => {
                   onHandlejobDetails(job.level);
-                  handleFilter(job.level, "level");
+                  onhandleFilter(job.level, "level");
                 }}
                 className="info-button"
               >
@@ -82,7 +82,7 @@ function JobList({ onHandlejobDetails }) {
                   <button
                     onClick={() => {
                       onHandlejobDetails(language);
-                      handleFilter(language, "languages");
+                      onhandleFilter(language, "languages");
                     }}
                     key={index}
                     className="info-button"
@@ -96,7 +96,7 @@ function JobList({ onHandlejobDetails }) {
                   <button
                     onClick={() => {
                       onHandlejobDetails(tool);
-                      handleFilter(tool, "tools");
+                      onhandleFilter(tool, "tools");
                     }}
                     key={index}
                     className="info-button"
