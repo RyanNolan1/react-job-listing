@@ -82,6 +82,7 @@ function JobList({ onHandlejobDetails }) {
                   <button
                     onClick={() => {
                       onHandlejobDetails(language);
+                      handleFilter(language, "languages");
                     }}
                     key={index}
                     className="info-button"
@@ -95,6 +96,7 @@ function JobList({ onHandlejobDetails }) {
                   <button
                     onClick={() => {
                       onHandlejobDetails(tool);
+                      handleFilter(tool, "tools");
                     }}
                     key={index}
                     className="info-button"
