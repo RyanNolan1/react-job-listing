@@ -50,11 +50,11 @@ function JobList({ onHandlejobDetails }) {
             <div className="button-container">
               <button
                 onClick={() => {
-                  onHandlejobDetails(job.position);
+                  onHandlejobDetails(job.role);
                 }}
                 className="info-button"
               >
-                {job.position}
+                {job.role}
               </button>
               <button
                 onClick={() => {
