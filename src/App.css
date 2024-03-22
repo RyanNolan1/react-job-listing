@@ -22,11 +22,16 @@ body {
   filter: drop-shadow(0px 0px 10px #00000020);
 }
 
-.language-buttons {
+.button-container {
+  gap: 1rem;
+  display: flex;
+}
+
+.info-button {
   padding: 0.5rem;
 }
 
 .language-buttons-container {
   height: 156px;
-  background-color: #63BABA;
+  background-color: #63baba;
 }

@@ -46,6 +46,8 @@ function JobList({ onHandleLanguages }) {
             </p>
             <hr></hr>
             <div className="button-container">
+              <button className="info-button">{job.position}</button>
+              <button className="info-button">{job.level}</button>
               {job.languages.map((language, index) => {
                 return (
                   <button
@@ -53,7 +55,7 @@ function JobList({ onHandleLanguages }) {
                       onHandleLanguages(language);
                     }}
                     key={index}
-                    className="language-buttons"
+                    className="info-button"
                   >
                     {language}
                   </button>
