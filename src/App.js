@@ -3,8 +3,9 @@ import "./App.css";
 import data from "./data.json";
 import { useState } from "react";
 
+let nextId = 0;
+
 function App() {
-  let nextId = 0;
   const [languages, setLanguages] = useState([]);
 
   function handleLanguages(language) {
@@ -23,7 +24,7 @@ function LanguageList({ languages }) {
   return (
     <div className="language-buttons-container">
       {languages.map((language) => {
-        return <button>{language.language}</button>;
+        return <button key={language.id}>{language.language}</button>;
       })}
     </div>
   );
