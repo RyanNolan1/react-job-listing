@@ -10,7 +10,9 @@ function App() {
 
   function handlejobDetails(jobDetail) {
     if (
-      !jobDetails.some((selectedjobDetail) => selectedjobDetail.jobDetail === jobDetail)
+      !jobDetails.some(
+        (selectedjobDetail) => selectedjobDetail.jobDetail === jobDetail
+      )
     ) {
       setjobDetails([...jobDetails, { id: nextId++, jobDetail: jobDetail }]);
     }
@@ -35,10 +37,17 @@ function JobDetailsList({ jobDetails }) {
 }
 
 function JobList({ onHandlejobDetails }) {
+  const [filteredJobs, setFilteredJobs] = useState(data);
+
+  function handleFilter(value) {
+    const filtered = data.filter((job) => job.role.includes(value));
+    setFilteredJobs(filtered);
+  }
+
   return (
     <div>
       <ul className="jobs-list">
-        {data.map((job) => (
+        {filteredJobs.map((job) => (
           <li className="job-container" key={job.id}>
             <img src={job.logo} alt={job.company} />
             <div className="job-name-container">{job.company}</div>
@@ -51,6 +60,7 @@ function JobList({ onHandlejobDetails }) {
               <button
                 onClick={() => {
                   onHandlejobDetails(job.role);
+                  handleFilter(job.role);
                 }}
                 className="info-button"
               >
