@@ -6,35 +6,35 @@ import { useState } from "react";
 let nextId = 0;
 
 function App() {
-  const [languages, setLanguages] = useState([]);
+  const [jobDetails, setjobDetails] = useState([]);
 
-  function handleLanguages(language) {
+  function handlejobDetails(jobDetail) {
     if (
-      !languages.some((chosenLanguage) => chosenLanguage.language === language)
+      !jobDetails.some((selectedjobDetail) => selectedjobDetail.jobDetail === jobDetail)
     ) {
-      setLanguages([...languages, { id: nextId++, language: language }]);
+      setjobDetails([...jobDetails, { id: nextId++, jobDetail: jobDetail }]);
     }
   }
 
   return (
     <div>
-      <LanguageList languages={languages} />
-      <JobList onHandleLanguages={handleLanguages} />
+      <JobDetailsList jobDetails={jobDetails} />
+      <JobList onHandlejobDetails={handlejobDetails} />
     </div>
   );
 }
 
-function LanguageList({ languages }) {
+function JobDetailsList({ jobDetails }) {
   return (
-    <div className="language-buttons-container">
-      {languages.map((language) => {
-        return <button key={language.id}>{language.language}</button>;
+    <div className="job-details-buttons-container">
+      {jobDetails.map((jobDetail) => {
+        return <button key={jobDetail.id}>{jobDetail.jobDetail}</button>;
       })}
     </div>
   );
 }
 
-function JobList({ onHandleLanguages }) {
+function JobList({ onHandlejobDetails }) {
   return (
     <div>
       <ul className="jobs-list">
@@ -50,7 +50,7 @@ function JobList({ onHandleLanguages }) {
             <div className="button-container">
               <button
                 onClick={() => {
-                  onHandleLanguages(job.position);
+                  onHandlejobDetails(job.position);
                 }}
                 className="info-button"
               >
@@ -58,7 +58,7 @@ function JobList({ onHandleLanguages }) {
               </button>
               <button
                 onClick={() => {
-                  onHandleLanguages(job.level);
+                  onHandlejobDetails(job.level);
                 }}
                 className="info-button"
               >
@@ -68,7 +68,7 @@ function JobList({ onHandleLanguages }) {
                 return (
                   <button
                     onClick={() => {
-                      onHandleLanguages(language);
+                      onHandlejobDetails(language);
                     }}
                     key={index}
                     className="info-button"
@@ -81,7 +81,7 @@ function JobList({ onHandleLanguages }) {
                 return (
                   <button
                     onClick={() => {
-                      onHandleLanguages(tool);
+                      onHandlejobDetails(tool);
                     }}
                     key={index}
                     className="info-button"
