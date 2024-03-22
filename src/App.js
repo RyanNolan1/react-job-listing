@@ -39,8 +39,10 @@ function JobDetailsList({ jobDetails }) {
 function JobList({ onHandlejobDetails }) {
   const [filteredJobs, setFilteredJobs] = useState(data);
 
-  function handleFilter(value) {
-    const filtered = data.filter((job) => job.role.includes(value));
+  function handleFilter(value, filterKey) {
+    const filtered = filteredJobs.filter((job) =>
+      job[filterKey].includes(value)
+    );
     setFilteredJobs(filtered);
   }
 
@@ -60,7 +62,7 @@ function JobList({ onHandlejobDetails }) {
               <button
                 onClick={() => {
                   onHandlejobDetails(job.role);
-                  handleFilter(job.role);
+                  handleFilter(job.role, "role");
                 }}
                 className="info-button"
               >
@@ -69,6 +71,7 @@ function JobList({ onHandlejobDetails }) {
               <button
                 onClick={() => {
                   onHandlejobDetails(job.level);
+                  handleFilter(job.level, "level");
                 }}
                 className="info-button"
               >
