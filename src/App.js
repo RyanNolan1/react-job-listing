@@ -77,6 +77,19 @@ function JobList({ onHandleLanguages }) {
                   </button>
                 );
               })}
+              {job.tools.map((tool, index) => {
+                return (
+                  <button
+                    onClick={() => {
+                      onHandleLanguages(tool);
+                    }}
+                    key={index}
+                    className="info-button"
+                  >
+                    {tool}
+                  </button>
+                );
+              })}
             </div>
           </li>
         ))}
