@@ -9,8 +9,10 @@ function App() {
   const [languages, setLanguages] = useState([]);
 
   function handleLanguages(language) {
-    setLanguages([...languages, { id: nextId++, language: language }]);
+    if (!languages.some(chosenLanguage => chosenLanguage.language === language)) {
+      setLanguages([...languages, { id: nextId++, language: language }]);
   }
+}
 
   return (
     <div>
