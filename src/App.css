@@ -23,5 +23,10 @@ body {
 }
 
 .language-buttons {
-    padding:0.5rem;
+  padding: 0.5rem;
+}
+
+.language-buttons-container {
+  height: 156px;
+  background-color: #63BABA;
 }

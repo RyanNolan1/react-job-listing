@@ -13,13 +13,21 @@ function App() {
 
   return (
     <div>
-      <LanguageList onHandleLanguages={handleLanguages} />
+      <LanguageList languages={languages} />
       <JobList onHandleLanguages={handleLanguages} />
     </div>
   );
 }
 
-function LanguageList() {}
+function LanguageList({ languages }) {
+  return (
+    <div className="language-buttons-container">
+      {languages.map((language) => {
+        return <button>{language.language}</button>;
+      })}
+    </div>
+  );
+}
 
 function JobList({ onHandleLanguages }) {
   return (
