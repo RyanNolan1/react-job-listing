@@ -9,10 +9,12 @@ function App() {
   const [languages, setLanguages] = useState([]);
 
   function handleLanguages(language) {
-    if (!languages.some(chosenLanguage => chosenLanguage.language === language)) {
+    if (
+      !languages.some((chosenLanguage) => chosenLanguage.language === language)
+    ) {
       setLanguages([...languages, { id: nextId++, language: language }]);
+    }
   }
-}
 
   return (
     <div>
@@ -46,8 +48,22 @@ function JobList({ onHandleLanguages }) {
             </p>
             <hr></hr>
             <div className="button-container">
-              <button className="info-button">{job.position}</button>
-              <button className="info-button">{job.level}</button>
+              <button
+                onClick={() => {
+                  onHandleLanguages(job.position);
+                }}
+                className="info-button"
+              >
+                {job.position}
+              </button>
+              <button
+                onClick={() => {
+                  onHandleLanguages(job.level);
+                }}
+                className="info-button"
+              >
+                {job.level}
+              </button>
               {job.languages.map((language, index) => {
                 return (
                   <button
