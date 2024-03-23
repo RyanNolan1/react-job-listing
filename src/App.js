@@ -9,6 +9,11 @@ function App() {
   const [jobDetails, setjobDetails] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState(data);
 
+  function deleteFilter(key) {
+    const filterIndex = jobDetails.filter((detail) => detail.id !== key);
+    setjobDetails(filterIndex)
+  }
+
   function handleFilter(value, filterKey) {
     const filtered = filteredJobs.filter((job) =>
       job[filterKey].includes(value)
@@ -28,24 +33,36 @@ function App() {
 
   return (
     <div>
-      <JobDetailsList jobDetails={jobDetails} />
-      <JobList filteredJobs={filteredJobs} onhandleFilter={handleFilter} onHandlejobDetails={handlejobDetails} />
+      <JobDetailsList onDeleteFilter={deleteFilter} jobDetails={jobDetails} />
+      <JobList
+        filteredJobs={filteredJobs}
+        onhandleFilter={handleFilter}
+        onHandlejobDetails={handlejobDetails}
+      />
     </div>
   );
 }
 
-function JobDetailsList({ jobDetails }) {
+function JobDetailsList({ jobDetails, onDeleteFilter }) {
   return (
     <div className="job-details-buttons-container">
       {jobDetails.map((jobDetail) => {
-        return <button key={jobDetail.id}>{jobDetail.jobDetail}</button>;
+        return (
+          <button
+            onClick={() => {
+              onDeleteFilter(jobDetail.id);
+            }}
+            key={jobDetail.id}
+          >
+            {jobDetail.jobDetail}
+          </button>
+        );
       })}
     </div>
   );
 }
 
 function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
-
   return (
     <div>
       <ul className="jobs-list">
