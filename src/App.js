@@ -10,11 +10,21 @@ function App() {
   const [filteredJobs, setFilteredJobs] = useState(data);
 
   function deleteFilter(key) {
-    const filterIndex = jobDetails.filter((detail) => detail.id !== key);
-    setjobDetails(filterIndex)
+    const updatedJobDetails = jobDetails.filter((detail) => detail.id !== key);
+    setjobDetails(updatedJobDetails);
 
-    if (filterIndex < 1) {
-      setFilteredJobs(data)
+    if (updatedJobDetails.length === 0) {
+      setFilteredJobs(data);
+    } else {
+      let filteredJobs = data;
+      updatedJobDetails.forEach((detail) => {
+        const filterKey = Object.keys(detail)[1];
+        const filterValue = Object.values(detail)[1];
+        filteredJobs = filteredJobs.filter((job) =>
+          job[filterKey].includes(filterValue)
+        );
+      });
+      setFilteredJobs(filteredJobs);
     }
   }
 
@@ -29,9 +39,12 @@ function App() {
     if (
       !jobDetails.some(
         (selectedjobDetail) => selectedjobDetail[jobDetailKey] === jobDetail
-        )
+      )
     ) {
-      setjobDetails([...jobDetails, { id: nextId++, [`${jobDetailKey}`]: jobDetail }]);
+      setjobDetails([
+        ...jobDetails,
+        { id: nextId++, [`${jobDetailKey}`]: jobDetail },
+      ]);
     }
   }
 
