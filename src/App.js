@@ -85,7 +85,7 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
       <ul className="jobs-list">
         {filteredJobs.map((job) => (
           <li className="job-container" key={job.id}>
-            <img src={job.logo} alt={job.company} />
+            <img className="company-logos" src={job.logo} alt={job.company} />
             <div className="job-name-container">{job.company}</div>
             <h2>{job.position}</h2>
             <p className="job-info-container">
