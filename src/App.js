@@ -62,6 +62,8 @@ function App() {
 
 function JobDetailsList({ jobDetails, onDeleteFilter }) {
   return (
+    <div>
+    <header></header>
     <div className="job-details-buttons-container">
       {jobDetails.map((jobDetail) => {
         return (
@@ -75,6 +77,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
           </button>
         );
       })}
+    </div>
     </div>
   );
 }

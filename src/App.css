@@ -9,15 +9,15 @@
 
 body {
   background: #effafa;
-  font-size:15px;
+  font-size: 15px;
 }
 
 .jobs-list {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  padding-top:4rem;
-  padding-bottom:4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .job-container {
@@ -26,27 +26,27 @@ body {
   width: 90%;
   margin: 0 auto;
   filter: drop-shadow(0px 0px 10px #00000020);
-  display:flex;
-  flex-direction:column;
-  gap:1.25rem;
-  padding:0 1.25rem 1.25rem 1.25rem;
-  border-radius:5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  border-radius: 5px;
 }
 
 .company-logos {
-  width:48px;
-  margin-top:-24px;
+  width: 48px;
+  margin-top: -24px;
 }
 
 .job-name-container {
-  font-size:1rem;
-  font-weight:500;
-  color:#5CA5A5;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5ca5a5;
 }
 
 .job-info-container {
-  color:#7C8F8F;
-  font-size:1.066rem;
+  color: #7c8f8f;
+  font-size: 1.066rem;
 }
 
 .button-container {
@@ -56,30 +56,40 @@ body {
 }
 
 .info-button {
-  color:#5CA5A5;
+  color: #5ca5a5;
   background: #5ca5a520;
-  font-size:1.066rem;
+  font-size: 1.066rem;
   border-radius: 5px;
-  border:none;
-  padding:16px 16px 14px 16px;
+  border: none;
+  padding: 16px 16px 14px 16px;
   font-weight: 700;
   transition: 0.3s;
 }
 
 .info-button:hover {
-  cursor:pointer;
+  cursor: pointer;
   background: #5ca5a5;
-  color:white;
+  color: white;
 }
 
-.job-details-buttons-container {
+header {
   height: 156px;
-  background-color: #5CA5A5;
+  background-color: #5ca5a5;
   background-image: url("/public/images/bg-header-mobile.svg");
 }
 
+.job-details-buttons-container {
+  width: 90%;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  margin-top: -30px;
+  border-radius: 5px;
+  padding: 1.25rem;
+}
+
 .divider {
-  height:2px;
-  background: #B7C4C4;
-  width:100%;
+  height: 2px;
+  background: #b7c4c4;
+  width: 100%;
 }
