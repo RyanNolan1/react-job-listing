@@ -74,7 +74,8 @@ body {
 
 .job-details-buttons-container {
   height: 156px;
-  background-color: #63baba;
+  background-color: #5CA5A5;
+  background-image: url("/public/images/bg-header-mobile.svg");
 }
 
 .divider {
