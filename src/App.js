@@ -67,14 +67,18 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
     <div className="job-details-buttons-container">
       {jobDetails.map((jobDetail) => {
         return (
+          <div className="job-details-button-container">
+            {Object.values(jobDetail)[1]}
           <button
+          className="job-details-button"
             onClick={() => {
               onDeleteFilter(jobDetail.id);
             }}
             key={jobDetail.id}
           >
-            {Object.values(jobDetail)[1]}
+            X
           </button>
+        </div>
         );
       })}
     </div>
