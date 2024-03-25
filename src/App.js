@@ -93,7 +93,7 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
               {job.contract} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
               {job.location}
             </p>
-            <hr></hr>
+            <span class="divider"></span>
             <div className="button-container">
               <button
                 onClick={() => {

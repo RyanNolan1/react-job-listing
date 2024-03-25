@@ -72,3 +72,9 @@ body {
   height: 156px;
   background-color: #63baba;
 }
+
+.divider {
+  height:2px;
+  background: #B7C4C4;
+  width:100%;
+}
