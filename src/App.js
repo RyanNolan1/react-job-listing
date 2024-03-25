@@ -14,6 +14,8 @@ function App() {
     setjobDetails(filterIndex)
   }
 
+  console.log(jobDetails)
+
   function handleFilter(value, filterKey) {
     const filtered = filteredJobs.filter((job) =>
       job[filterKey].includes(value)
@@ -21,13 +23,13 @@ function App() {
     setFilteredJobs(filtered);
   }
 
-  function handlejobDetails(jobDetail) {
+  function handlejobDetails(jobDetail, jobDetailKey) {
     if (
       !jobDetails.some(
-        (selectedjobDetail) => selectedjobDetail.jobDetail === jobDetail
-      )
+        (selectedjobDetail) => selectedjobDetail[jobDetailKey] === jobDetail
+        )
     ) {
-      setjobDetails([...jobDetails, { id: nextId++, jobDetail: jobDetail }]);
+      setjobDetails([...jobDetails, { id: nextId++, [`${jobDetailKey}`]: jobDetail }]);
     }
   }
 
@@ -54,7 +56,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
             }}
             key={jobDetail.id}
           >
-            {jobDetail.jobDetail}
+            {Object.values(jobDetail)[1]}
           </button>
         );
       })}
@@ -78,7 +80,7 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
             <div className="button-container">
               <button
                 onClick={() => {
-                  onHandlejobDetails(job.role);
+                  onHandlejobDetails(job.role, "role");
                   onhandleFilter(job.role, "role");
                 }}
                 className="info-button"
@@ -87,7 +89,7 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
               </button>
               <button
                 onClick={() => {
-                  onHandlejobDetails(job.level);
+                  onHandlejobDetails(job.level, "level");
                   onhandleFilter(job.level, "level");
                 }}
                 className="info-button"
@@ -98,7 +100,7 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
                 return (
                   <button
                     onClick={() => {
-                      onHandlejobDetails(language);
+                      onHandlejobDetails(language, "languages");
                       onhandleFilter(language, "languages");
                     }}
                     key={index}
@@ -112,7 +114,7 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
                 return (
                   <button
                     onClick={() => {
-                      onHandlejobDetails(tool);
+                      onHandlejobDetails(tool, "tools");
                       onhandleFilter(tool, "tools");
                     }}
                     key={index}
