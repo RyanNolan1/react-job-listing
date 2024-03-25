@@ -12,9 +12,11 @@ function App() {
   function deleteFilter(key) {
     const filterIndex = jobDetails.filter((detail) => detail.id !== key);
     setjobDetails(filterIndex)
-  }
 
-  console.log(jobDetails)
+    if (filterIndex < 1) {
+      setFilteredJobs(data)
+    }
+  }
 
   function handleFilter(value, filterKey) {
     const filtered = filteredJobs.filter((job) =>
