@@ -89,7 +89,9 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
             <div className="job-name-container">{job.company}</div>
             <h2>{job.position}</h2>
             <p className="job-info-container">
-              {job.postedAt} &bull; {job.contract} &bull; {job.location}
+              {job.postedAt} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
+              {job.contract} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
+              {job.location}
             </p>
             <hr></hr>
             <div className="button-container">
