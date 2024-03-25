@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   gap: 2.5rem;
   padding-top:4rem;
+  padding-bottom:4rem;
 }
 
 .job-container {
