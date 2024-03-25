@@ -86,31 +86,43 @@ header {
   border-radius: 5px;
   display: flex;
   flex-direction: row;
-  gap:1rem;
+  gap: 1rem;
   color: #5ca5a5;
-  padding:1.25rem;
+  padding: 1.25rem;
   flex-wrap: wrap;
 }
 
 .job-details-button-container {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
   background: #5ca5a520;
   border-radius: 5px;
   font-size: 1.066rem;
-  font-weight:700;
-  padding-left:1rem;
+  font-weight: 700;
+  padding: 0 0 0 16px;
 }
 
-
 .job-details-button {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 16px 14px 16px;
+  font-size: 1.5rem;
+  font-family: "League Spartan", sans-serif;
+  border: none;
+  background-color: #5ca5a5;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  transition: 0.3s;
+  padding: 10px 10px 9px 10px;
+  overflow: hidden;
+}
+
+.job-details-button:hover {
+  background: black;
+  cursor: pointer;
 }
 
 .divider {

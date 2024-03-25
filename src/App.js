@@ -76,7 +76,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
             }}
             key={jobDetail.id}
           >
-            X
+            &#x2715;
           </button>
         </div>
         );
