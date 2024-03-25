@@ -64,10 +64,10 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
   return (
     <div>
       <header></header>
-      <div className="job-details-buttons-container">
+      <div className={jobDetails.length === 0 ? "hidden" : "job-details-buttons-container" }>
         {jobDetails.map((jobDetail) => {
           return (
-            <div className="job-details-button-container"   key={jobDetail.id}>
+            <div className="job-details-button-container" key={jobDetail.id}>
               <p className="job-details-button-text">{Object.values(jobDetail)[1]}</p>
               <button
                 className="job-details-button"
