@@ -18,9 +18,9 @@ body {
   gap: 2.5rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  padding-left:2rem;
-  padding-right:2rem;
-  max-width:1100px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -34,7 +34,7 @@ body {
   gap: 1.25rem;
   padding: 0 1.25rem 1.25rem 1.25rem;
   border-radius: 5px;
-  width:100%;
+  width: 100%;
 }
 
 .company-logo {
@@ -91,8 +91,8 @@ header {
 }
 
 .job-details-container {
-  padding-left:2rem;
-  padding-right:2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   max-width: 1110px;
   margin: 0 auto;
 }
@@ -111,7 +111,7 @@ header {
 }
 
 .hidden {
-  display:none;
+  display: none;
 }
 
 .job-details-button-container {
@@ -154,7 +154,7 @@ header {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width:990px) {
   header {
     background-image: url("/public/images/bg-header-desktop.svg");
   }
@@ -170,13 +170,16 @@ header {
     margin-top: 0px;
   }
 
-
   .divider {
     display: none;
   }
-  
+
+  .job-name-info-container {
+    flex-grow: 1;
+  }
+
   .button-container {
-    flex-grow:1;
-   justify-content: end;
+    flex-shrink: 1;
+    justify-content: end;
   }
 }
