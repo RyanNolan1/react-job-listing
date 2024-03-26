@@ -101,7 +101,11 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
           <li className="job-container" key={job.id}>
             <img className="company-logo" src={job.logo} alt={job.company} />
             <div className="job-name-info-container">
-            <div className="job-name-container">{job.company}</div>
+            <div className="job-name-container">
+            <p className="company-name">{job.company}</p>
+            <p>{job.new ? "NEW!" : ""}</p>
+            <p>{job.featured ? "FEATURED" : ""}</p>
+            </div>
             <h2>{job.position}</h2>
             <p className="job-info-container">
               {job.postedAt} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
