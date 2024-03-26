@@ -89,12 +89,6 @@ body {
   height: 32px;
 }
 
-.info-button:hover {
-  cursor: pointer;
-  background: #5ca5a5;
-  color: white;
-}
-
 header {
   height: 156px;
   background-color: #5ca5a5;
@@ -155,11 +149,6 @@ header {
   width: 32px;
 }
 
-.job-details-button:hover {
-  background: black;
-  cursor: pointer;
-}
-
 .divider {
   height: 2px;
   background: #b7c4c4;
@@ -209,5 +198,16 @@ header {
   .button-container {
     flex-shrink: 1;
     justify-content: end;
+  }
+
+  .info-button:hover {
+    cursor: pointer;
+    background: #5ca5a5;
+    color: white;
+  }
+
+  .job-details-button:hover {
+    background: black;
+    cursor: pointer;
   }
 }
