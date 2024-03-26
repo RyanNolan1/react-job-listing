@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/RyanNolan1/react-job-listing](https://github.com/RyanNolan1/react-job-listing)
-- Live Site URL: [Add live site URL here](https://ryans-react-job-listings.netlify.app/)
+- Live Site URL: [https://ryans-react-job-listings.netlify.app/](https://ryans-react-job-listings.netlify.app/)
 
 ## My process
 
