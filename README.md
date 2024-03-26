@@ -44,5 +44,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [ryannolan.uk](https://ryannolan.uk)
+- Website - [ryannolan.uk](www.ryannolan.uk)
 - LinkedIn - [ryan-nolan1](https://uk.linkedin.com/in/ryan-nolan1)
