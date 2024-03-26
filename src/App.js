@@ -62,8 +62,9 @@ function App() {
 
 function JobDetailsList({ jobDetails, onDeleteFilter }) {
   return (
-    <div>
+    <>
       <header></header>
+      <div className="job-details-container">
       <div className={jobDetails.length === 0 ? "hidden" : "job-details-buttons-container" }>
         {jobDetails.map((jobDetail) => {
           return (
@@ -87,7 +88,8 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
           );
         })}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
