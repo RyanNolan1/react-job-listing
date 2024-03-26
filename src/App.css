@@ -37,6 +37,10 @@ body {
   width: 100%;
 }
 
+.featured-job {
+  border-left:solid 5px #5ca5a5;
+}
+
 .company-logo {
   width: 48px;
   margin-top: -24px;
