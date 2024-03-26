@@ -49,8 +49,8 @@ body {
 }
 
 .job-name-container {
-  display:flex;
-  gap:1rem;
+  display: flex;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -161,7 +161,23 @@ header {
   width: 100%;
 }
 
-@media (min-width:990px) {
+.new {
+  color: white;
+  background: #5ca5a5;
+  border-radius: 100px;
+  padding: 10px 10px 6px 12px;
+  font-weight:500;
+}
+
+.featured {
+  color: white;
+  background: black;
+  border-radius: 100px;
+  padding: 10px 10px 6px 12px;
+  font-weight:500;
+}
+
+@media (min-width: 990px) {
   header {
     background-image: url("/public/images/bg-header-desktop.svg");
   }

@@ -65,29 +65,39 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
     <>
       <header></header>
       <div className="job-details-container">
-      <div className={jobDetails.length === 0 ? "hidden" : "job-details-buttons-container" }>
-        {jobDetails.map((jobDetail) => {
-          return (
-            <div className="job-details-button-container" key={jobDetail.id}>
-              <p className="job-details-button-text">{Object.values(jobDetail)[1]}</p>
-              <button
-                className="job-details-button"
-                onClick={() => {
-                  onDeleteFilter(jobDetail.id);
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-                  <path
-                    fill="#FFF"
-                    fillRule="evenodd"
-                    d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
-                  />
-                </svg>
-              </button>
-            </div>
-          );
-        })}
-      </div>
+        <div
+          className={
+            jobDetails.length === 0 ? "hidden" : "job-details-buttons-container"
+          }
+        >
+          {jobDetails.map((jobDetail) => {
+            return (
+              <div className="job-details-button-container" key={jobDetail.id}>
+                <p className="job-details-button-text">
+                  {Object.values(jobDetail)[1]}
+                </p>
+                <button
+                  className="job-details-button"
+                  onClick={() => {
+                    onDeleteFilter(jobDetail.id);
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      fill="#FFF"
+                      fillRule="evenodd"
+                      d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
@@ -101,17 +111,21 @@ function JobList({ onHandlejobDetails, onhandleFilter, filteredJobs }) {
           <li className="job-container" key={job.id}>
             <img className="company-logo" src={job.logo} alt={job.company} />
             <div className="job-name-info-container">
-            <div className="job-name-container">
-            <p className="company-name">{job.company}</p>
-            <p>{job.new ? "NEW!" : ""}</p>
-            <p>{job.featured ? "FEATURED" : ""}</p>
-            </div>
-            <h2>{job.position}</h2>
-            <p className="job-info-container">
-              {job.postedAt} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
-              {job.contract} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
-              {job.location}
-            </p>
+              <div className="job-name-container">
+                <p className="company-name">{job.company}</p>
+                <p className={job.new ? "new" : ""}>
+                  {job.new ? "NEW!" : ""}
+                </p>
+                <p className={job.featured ? "featured" : ""}>
+                  {job.featured ? "FEATURED" : ""}
+                </p>
+              </div>
+              <h2>{job.position}</h2>
+              <p className="job-info-container">
+                {job.postedAt} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
+                {job.contract} <span style={{ color: "#B7C4C4" }}>&bull;</span>{" "}
+                {job.location}
+              </p>
             </div>
             <span className="divider"></span>
             <div className="button-container">
