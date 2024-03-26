@@ -86,7 +86,8 @@ body {
   border: none;
   font-weight: 700;
   transition: 0.3s;
-  height: 32px;
+  padding-bottom:10px;
+  padding-top:12px;
 }
 
 header {
@@ -125,15 +126,14 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   border-radius: 5px;
   background: #5ca5a520;
 }
 
 .job-details-button-text {
-  padding: 0 0 0 16px;
   font-weight: 700;
   font-size: 1.066rem;
+  padding: 12px 12px 10px 12px;
 }
 
 .job-details-button {
@@ -145,7 +145,7 @@ header {
   border-radius: 0 5px 5px 0;
   transition: 0.3s;
   overflow: hidden;
-  height: 32px;
+  padding: 12px 0;
   width: 32px;
 }
 
