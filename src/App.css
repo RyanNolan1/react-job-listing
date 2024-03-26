@@ -210,4 +210,13 @@ header {
     background: black;
     cursor: pointer;
   }
+
+  h2 {
+    transition: 0.3s;
+  }
+
+  h2:hover {
+    color: #5ca5a5;
+    cursor: pointer;
+  }
 }
