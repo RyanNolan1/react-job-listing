@@ -9,6 +9,10 @@ function App() {
   const [jobDetails, setjobDetails] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState(data);
 
+  function clearJobDetails() {
+    setjobDetails([])
+  }
+
   function deleteFilter(key) {
     const updatedJobDetails = jobDetails.filter((detail) => detail.id !== key);
     setjobDetails(updatedJobDetails);
@@ -50,7 +54,7 @@ function App() {
 
   return (
     <div>
-      <JobDetailsList onDeleteFilter={deleteFilter} jobDetails={jobDetails} />
+      <JobDetailsList onclearJobDetails={clearJobDetails} onDeleteFilter={deleteFilter} jobDetails={jobDetails} />
       <JobList
         filteredJobs={filteredJobs}
         onhandleFilter={handleFilter}
@@ -60,7 +64,7 @@ function App() {
   );
 }
 
-function JobDetailsList({ jobDetails, onDeleteFilter }) {
+function JobDetailsList({ jobDetails, onDeleteFilter, onclearJobDetails }) {
   return (
     <>
       <header></header>
@@ -99,7 +103,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
             );
           })}
           </div>
-          <button className="clear-button-container">Clear</button>
+          <button onClick={() => onclearJobDetails()} className="clear-button-container">Clear</button>
         </div>
       </div>
     </>
