@@ -10,7 +10,8 @@ function App() {
   const [filteredJobs, setFilteredJobs] = useState(data);
 
   function clearJobDetails() {
-    setjobDetails([])
+    setjobDetails([]);
+    setFilteredJobs(data);
   }
 
   function deleteFilter(key) {
