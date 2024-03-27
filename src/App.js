@@ -70,6 +70,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
             jobDetails.length === 0 ? "hidden" : "job-details-buttons-container"
           }
         >
+          <div className="buttons-container">
           {jobDetails.map((jobDetail) => {
             return (
               <div className="job-details-button-container" key={jobDetail.id}>
@@ -97,6 +98,8 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
               </div>
             );
           })}
+          </div>
+          <button className="clear-button-container">Clear</button>
         </div>
       </div>
     </>

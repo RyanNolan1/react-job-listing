@@ -110,11 +110,24 @@ header {
   border-radius: 5px;
   display: flex;
   flex-direction: row;
-  gap: 1.25rem;
   color: #5ca5a5;
   padding: 1.25rem;
-  flex-wrap: wrap;
   filter: drop-shadow(0px 0px 10px #00000020);
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1.25rem;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.clear-button-container {
+  background: none;
+  border: none;
+  color: #7c8f8f;
+  font-weight: 700;
+  font-size: 1.066rem;
 }
 
 .hidden {
@@ -216,6 +229,11 @@ header {
   }
 
   h2:hover {
+    color: #5ca5a5;
+    cursor: pointer;
+  }
+
+  .clear-button-container:hover {
     color: #5ca5a5;
     cursor: pointer;
   }
