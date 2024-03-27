@@ -238,4 +238,9 @@ header {
     color: #5ca5a5;
     cursor: pointer;
   }
+
+  .job-details-buttons-container {
+    padding-left:3rem;
+    padding-right:3rem;
+  }
 }
