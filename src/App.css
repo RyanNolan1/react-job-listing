@@ -122,12 +122,13 @@ header {
   flex-wrap: wrap;
 }
 
-.clear-button-container {
+.clear-button {
   background: none;
   border: none;
   color: #7c8f8f;
   font-weight: 700;
   font-size: 1.066rem;
+  transition: 0.3s;
 }
 
 .hidden {
@@ -233,7 +234,7 @@ header {
     cursor: pointer;
   }
 
-  .clear-button-container:hover {
+  .clear-button:hover {
     color: #5ca5a5;
     cursor: pointer;
   }

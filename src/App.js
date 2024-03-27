@@ -103,7 +103,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter, onclearJobDetails }) {
             );
           })}
           </div>
-          <button onClick={() => onclearJobDetails()} className="clear-button-container">Clear</button>
+          <button onClick={() => onclearJobDetails()} className="clear-button">Clear</button>
         </div>
       </div>
     </>
