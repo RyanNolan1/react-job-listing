@@ -9,6 +9,11 @@ function App() {
   const [jobDetails, setjobDetails] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState(data);
 
+  function clearJobDetails() {
+    setjobDetails([]);
+    setFilteredJobs(data);
+  }
+
   function deleteFilter(key) {
     const updatedJobDetails = jobDetails.filter((detail) => detail.id !== key);
     setjobDetails(updatedJobDetails);
@@ -50,7 +55,7 @@ function App() {
 
   return (
     <div>
-      <JobDetailsList onDeleteFilter={deleteFilter} jobDetails={jobDetails} />
+      <JobDetailsList onclearJobDetails={clearJobDetails} onDeleteFilter={deleteFilter} jobDetails={jobDetails} />
       <JobList
         filteredJobs={filteredJobs}
         onhandleFilter={handleFilter}
@@ -60,7 +65,7 @@ function App() {
   );
 }
 
-function JobDetailsList({ jobDetails, onDeleteFilter }) {
+function JobDetailsList({ jobDetails, onDeleteFilter, onclearJobDetails }) {
   return (
     <>
       <header></header>
@@ -70,6 +75,7 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
             jobDetails.length === 0 ? "hidden" : "job-details-buttons-container"
           }
         >
+          <div className="buttons-container">
           {jobDetails.map((jobDetail) => {
             return (
               <div className="job-details-button-container" key={jobDetail.id}>
@@ -97,6 +103,8 @@ function JobDetailsList({ jobDetails, onDeleteFilter }) {
               </div>
             );
           })}
+          </div>
+          <button onClick={() => onclearJobDetails()} className="clear-button">Clear</button>
         </div>
       </div>
     </>
