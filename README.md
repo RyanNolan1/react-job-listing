@@ -44,5 +44,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [ryannolan.uk](https://ryannolan1.github.io/portfolio-2.0/)
-- LinkedIn - [ryan-nolan1](https://uk.linkedin.com/in/ryan-nolan1)
+- Website - [http://ryannolan.uk/](http://ryannolan.uk/)
+- Frontend Mentor - [@RyanNolan1](https://www.frontendmentor.io/profile/RyanNolan1)
+- LinkedIn - [ryan-nolan1](https://www.linkedin.com/in/ryan-nolan1/)
+
