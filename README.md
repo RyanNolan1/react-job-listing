@@ -47,4 +47,3 @@ Users should be able to:
 - Website - [http://ryannolan.uk/](http://ryannolan.uk/)
 - Frontend Mentor - [@RyanNolan1](https://www.frontendmentor.io/profile/RyanNolan1)
 - LinkedIn - [ryan-nolan1](https://www.linkedin.com/in/ryan-nolan1/)
-
